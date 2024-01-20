@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  &Date {
+
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+
+    & span {
+      font-weight: 600;
+      padding-right: .2rem;
+    }
+
+    & svg {
+      padding: 0 0 .2rem 0;
+      margin: 0 .6rem 0 1.2rem;
+    }
+
+  }
+
+}

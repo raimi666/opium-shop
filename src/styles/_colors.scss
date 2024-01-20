@@ -1,0 +1,23 @@
+$base-color: #f1f2f6;
+$text-green: #2ed573;
+$text-green2: #5bb433;
+$text-main: #2C3A47;
+
+$button-color: #5bb433;
+$button-color2: #439f1c;
+
+$grey-border: #CAD3C8;
+$grey-icon: #636e72;
+$grey-text: #b2bec3;
+
+@mixin base-shadow {
+  -webkit-box-shadow: 0 2px 15px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 2px 15px -7px rgba(0,0,0,0.75);
+  box-shadow: 0 2px 15px -7px rgba(0,0,0,0.75);
+}
+
+@mixin vertical-shadow {
+  -webkit-box-shadow: -3px 11px 32px 0 rgba(0,0,0,0.75);
+  -moz-box-shadow: -3px 11px 32px 0 rgba(0,0,0,0.75);
+  box-shadow: -3px 11px 32px 0 rgba(0,0,0,0.75);
+}

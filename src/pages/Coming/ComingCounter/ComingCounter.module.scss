@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: min-content;
+
+  &Data {
+    display: flex;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    align-items: center;
+    text-wrap: avoid;
+    gap: 1rem;
+  }
+
+}
