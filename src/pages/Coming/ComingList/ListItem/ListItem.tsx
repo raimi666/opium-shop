@@ -1,7 +1,9 @@
-import React from "react";
+import React, {SetStateAction, useEffect, useRef} from "react";
 import {Product} from "../../../../utils/hooks/useData.ts";
 import {ListItem, IconButton, ListItemText, Button} from "@mui/material";
 import {Delete, FormatListBulleted} from "@mui/icons-material";
+
+import {gsap} from "gsap";
 
 import styles from './ListItem.module.scss'
 import * as classNames from "classnames";
@@ -9,14 +11,20 @@ import moment from "moment";
 
 type ListItemProps = {
     data: Product;
+    onRemoveItem: (p: Product) => void
 }
-export const ComingListItem: React.FC<ListItemProps> = ({data}) => {
+export const ComingListItem: React.FC<ListItemProps> = ({data, onRemoveItem}) => {
+
+
     return(
         <ListItem
             className={styles.container}
             sx={{width: '100%'}}
             secondaryAction={
-                <IconButton sx={{marginRight: '.4rem', padding: '.1rem'}} edge="end" aria-label="delete">
+                <IconButton
+                    sx={{marginRight: '.4rem', padding: '.1rem'}} edge="end" aria-label="delete"
+                    onClick={() => onRemoveItem(data)}
+                >
                     <Delete/>
                 </IconButton>
             }

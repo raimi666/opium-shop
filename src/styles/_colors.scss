@@ -10,6 +10,8 @@ $grey-border: #CAD3C8;
 $grey-icon: #636e72;
 $grey-text: #b2bec3;
 
+$red-text: #e17055;
+
 @mixin base-shadow {
   -webkit-box-shadow: 0 2px 15px -7px rgba(0,0,0,0.75);
   -moz-box-shadow: 0 2px 15px -7px rgba(0,0,0,0.75);
@@ -20,4 +22,10 @@ $grey-text: #b2bec3;
   -webkit-box-shadow: -3px 11px 32px 0 rgba(0,0,0,0.75);
   -moz-box-shadow: -3px 11px 32px 0 rgba(0,0,0,0.75);
   box-shadow: -3px 11px 32px 0 rgba(0,0,0,0.75);
+}
+
+@mixin sweet-shadow {
+  -webkit-box-shadow: 2px 2px 16px 0 rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 16px 0 rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 16px 0 rgba(0,0,0,0.75);
 }

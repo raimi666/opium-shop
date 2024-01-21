@@ -34,23 +34,34 @@ export const AddButton: React.FC<AddButtonType> = ({onClick, size, children}) =>
                 })
                 .to(buttonChild, {
                     boxShadow: 'inset 0px 0px 12px 0px rgba(0,0,0,0.75)',
-                    duration: 0.1
+                    duration: 0.1,
+                    onComplete: () => {
+                        isHovered && buttonAnimationTimelineRef.current && buttonAnimationTimelineRef.current.to(buttonChild, {
+                            boxShadow: isHovered ? 'inset 0px 0px 5px 0px rgba(0,0,0,0.75)' : 'unset',
+                            duration: 0.1,
+                        });
+                    }
                 })
-
-            !isHovered && buttonAnimationTimelineRef.current.to(buttonChild, {
-                boxShadow: isHovered ? 'inset 0px 0px 2px 0px rgba(0,0,0,0.75)' : 'inset 0px 0px 5px 0px rgba(0,0,0,0.75)',
-                duration: 0.1,
-            });
 
         }
     }, [refButton, isHovered]);
 
     useEffect(() => {
-        if (refButton.current && refButton.current.children.length) {
-            refButton.current.children[0].style.boxShadow = isHovered ? 'inset 0px 0px 5px 0px rgba(0,0,0,0.75)' : 'unset';
+
+        if(refButton.current) {
+            const buttonChild = refButton.current.children[0];
+
+            gsap.to(buttonChild, {
+                boxShadow: isHovered ? 'inset 0px 0px 5px 0px rgba(0,0,0,0.75)' : 'unset',
+                duration: 0.1,
+            });
         }
 
-    }, [isHovered])
+        if(buttonAnimationTimelineRef.current && !isHovered) {
+            buttonAnimationTimelineRef.current?.reverse();
+        }
+
+    }, [isHovered, refButton])
 
     const onClickHandler = () => {
 
@@ -78,5 +89,6 @@ export const AddButton: React.FC<AddButtonType> = ({onClick, size, children}) =>
                 {children}
             </p>
         </div>
+
     </Button>)
 }
