@@ -32,7 +32,6 @@ export const Settings: React.FC = () => {
                 >
 
                     <MenuItem value='en'> ENG </MenuItem>
-                    <MenuItem value='ua'> УКР </MenuItem>
                     <MenuItem value='ru'> РУС </MenuItem>
 
                 </Select>
